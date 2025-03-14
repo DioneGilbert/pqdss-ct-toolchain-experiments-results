@@ -1,0 +1,197 @@
+Round,Candidate,Security_Level,Instance,Algorithm,Binsec,Finding,Dudect,Finding,RTLF,Finding,Timecop,Finding,command
+2,cross,lvl1,1_RSDP_BALANCED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl1,1_RSDPG_BALANCED,Sign,OK,NOT ANALYZED,OK,"TRUE POSITIVE (meas:    0.02 M, max t:  +11.74, max tau: 8.10e-02, (5/tau)^2: 3.81e+03. Probably not constant time.)",-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl1,1_RSDPG_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl1,1_RSDPG_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl1,1_RSDP_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl1,1_RSDP_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDP_BALANCED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDPG_BALANCED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDPG_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDPG_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDP_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl3,3_RSDP_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDP_BALANCED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDPG_BALANCED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDPG_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDPG_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDP_SIG_SIZE,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,cross,lvl5,5_RSDP_SPEED,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate cross
+2,less,lvl1,less_252_192,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl1,less_252_45,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl1,less_252_68,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl3,less_400_102,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl3,less_400_220,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl5,less_548_137,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,less,lvl5,less_548_345,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,TRUE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate less
+2,hawk,challenge_parameter_set,hawk256,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate hawk --instances hawk256
+2,hawk,lvl1,hawk512,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate hawk --instances hawk512
+2,hawk,lvl5,hawk1024,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate hawk --instances hawk1024
+2,mirath,lvl1,mirath_tcith_1a_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_1a_fast
+2,mirath,lvl1,mirath_tcith_1a_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_1a_short
+2,mirath,lvl1,mirath_tcith_1b_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_1b_fast
+2,mirath,lvl1,mirath_tcith_1b_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_1b_short
+2,mirath,lvl3,mirath_tcith_3a_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_3a_fast
+2,mirath,lvl3,mirath_tcith_3a_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_3a_short
+2,mirath,lvl3,mirath_tcith_3b_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_3b_fast
+2,mirath,lvl3,mirath_tcith_3b_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_3b_short
+2,mirath,lvl5,mirath_tcith_5a_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_5a_fast
+2,mirath,lvl5,mirath_tcith_5a_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_5a_short
+2,mirath,lvl5,mirath_tcith_5b_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_5b_fast
+2,mirath,lvl5,mirath_tcith_5b_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mirath --instances mirath_tcith_5b_short
+2,mqom,lvl1,mqom2_cat1_gf256_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf256_fast_r3
+2,mqom,lvl1,mqom2_cat1_gf256_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf256_fast_r5
+2,mqom,lvl1,mqom2_cat1_gf256_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf256_short_r3
+2,mqom,lvl1,mqom2_cat1_gf256_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf256_short_r5
+2,mqom,lvl1,mqom2_cat1_gf2_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf2_fast_r3
+2,mqom,lvl1,mqom2_cat1_gf2_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf2_fast_r5
+2,mqom,lvl1,mqom2_cat1_gf2_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf2_short_r3
+2,mqom,lvl1,mqom2_cat1_gf2_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat1_gf2_short_r5
+2,mqom,lvl3,mqom2_cat3_gf256_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf256_fast_r3
+2,mqom,lvl3,mqom2_cat3_gf256_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf256_fast_r5
+2,mqom,lvl3,mqom2_cat3_gf256_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf256_short_r3
+2,mqom,lvl3,mqom2_cat3_gf256_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf256_short_r5
+2,mqom,lvl3,mqom2_cat3_gf2_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf2_fast_r3
+2,mqom,lvl3,mqom2_cat3_gf2_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf2_fast_r5
+2,mqom,lvl3,mqom2_cat3_gf2_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf2_short_r3
+2,mqom,lvl3,mqom2_cat3_gf2_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat3_gf2_short_r5
+2,mqom,lvl5,mqom2_cat5_gf256_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf256_fast_r3
+2,mqom,lvl5,mqom2_cat5_gf256_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf256_fast_r5
+2,mqom,lvl5,mqom2_cat5_gf256_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf256_short_r3
+2,mqom,lvl5,mqom2_cat5_gf256_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf256_short_r5
+2,mqom,lvl5,mqom2_cat5_gf2_fast_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf2_fast_r3
+2,mqom,lvl5,mqom2_cat5_gf2_fast_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf2_fast_r5
+2,mqom,lvl5,mqom2_cat5_gf2_short_r3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf2_short_r3
+2,mqom,lvl5,mqom2_cat5_gf2_short_r5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mqom --instances mqom2_cat5_gf2_short_r5
+2,perk,lvl3,perk-192-short-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk  --instances perk-192-short-5
+2,perk,lvl3,perk-192-fast-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-192-fast-5
+2,perk,lvl3,perk-192-fast-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-192-fast-3
+2,perk,lvl3,perk-192-short-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-192-short-3
+2,perk,lvl1,perk-128-fast-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-128-fast-5
+2,perk,lvl5,perk-256-fast-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-256-fast-3
+2,perk,lvl1,perk-128-fast-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-128-fast-3
+2,perk,lvl5,perk-256-fast-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-256-fast-5
+2,perk,lvl1,perk-128-short-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-128-short-3
+2,perk,lvl1,perk-128-short-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-128-short-5
+2,perk,lvl5,perk-256-short-3,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-256-short-3
+2,perk,lvl5,perk-256-short-5,Sign,OK,FALSE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate perk --instances perk-256-short-5
+2,ryde,lvl1,ryde1f,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde1f
+2,ryde,lvl1,ryde1s,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde1s
+2,ryde,lvl3,ryde3f,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde3f
+2,ryde,lvl3,ryde3s,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde3s
+2,ryde,lvl5,ryde5f,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde5f
+2,ryde,lvl5,ryde5s,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate ryde --instances ryde5s
+2,snova,lvl1,SNOVA_24_5_16_4_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+2,snova,lvl1,SNOVA_24_5_16_4_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_SHAKE_ESK
+2,snova,lvl1,SNOVA_24_5_16_4_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_SHAKE_SSK
+2,snova,lvl1,SNOVA_24_5_16_4_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_SSK
+2,snova,lvl3,SNOVA_24_5_16_5_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_5_ESK
+2,snova,lvl3,SNOVA_24_5_16_5_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_5_SHAKE_ESK
+2,snova,lvl3,SNOVA_24_5_16_5_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_5_SHAKE_SSK
+2,snova,lvl3,SNOVA_24_5_16_5_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_5_SSK
+2,snova,lvl1,SNOVA_25_8_16_3_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_25_8_16_3_ESK
+2,snova,lvl1,SNOVA_25_8_16_3_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_25_8_16_3_SHAKE_ESK
+2,snova,lvl1,SNOVA_25_8_16_3_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_25_8_16_3_SHAKE_SSK
+2,snova,lvl1,SNOVA_25_8_16_3_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_25_8_16_3_SSK
+2,snova,lvl5,SNOVA_29_6_16_5_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_29_6_16_5_ESK
+2,snova,lvl5,SNOVA_29_6_16_5_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_29_6_16_5_SHAKE_ESK
+2,snova,lvl5,SNOVA_29_6_16_5_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_29_6_16_5_SHAKE_SSK
+2,snova,lvl5,SNOVA_29_6_16_5_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_29_6_16_5_SSK
+2,snova,lvl1,SNOVA_37_17_16_2_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_17_16_2_ESK
+2,snova,lvl1,SNOVA_37_17_16_2_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_17_16_2_SHAKE_ESK
+2,snova,lvl1,SNOVA_37_17_16_2_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_17_16_2_SHAKE_SSK
+2,snova,lvl1,SNOVA_37_17_16_2_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_17_16_2_SSK
+2,snova,lvl3,SNOVA_37_8_16_4_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_8_16_4_ESK
+2,snova,lvl3,SNOVA_37_8_16_4_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_8_16_4_SHAKE_ESK
+2,snova,lvl3,SNOVA_37_8_16_4_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_8_16_4_SHAKE_SSK
+2,snova,lvl3,SNOVA_37_8_16_4_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_37_8_16_4_SSK
+2,snova,lvl3,SNOVA_49_11_16_3_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_49_11_16_3_ESK
+2,snova,lvl3,SNOVA_49_11_16_3_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_49_11_16_3_SHAKE_ESK
+2,snova,lvl3,SNOVA_49_11_16_3_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_49_11_16_3_SHAKE_SSK
+2,snova,lvl3,SNOVA_49_11_16_3_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_49_11_16_3_SSK
+2,snova,lvl3,SNOVA_56_25_16_2_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_56_25_16_2_ESK
+2,snova,lvl3,SNOVA_56_25_16_2_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_56_25_16_2_SHAKE_ESK
+2,snova,lvl3,SNOVA_56_25_16_2_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_56_25_16_2_SHAKE_SSK
+2,snova,lvl3,SNOVA_56_25_16_2_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_56_25_16_2_SSK
+2,snova,lvl5,SNOVA_60_10_16_4_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_60_10_16_4_ESK
+2,snova,lvl5,SNOVA_60_10_16_4_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_60_10_16_4_SHAKE_ESK
+2,snova,lvl5,SNOVA_60_10_16_4_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_60_10_16_4_SHAKE_SSK
+2,snova,lvl5,SNOVA_60_10_16_4_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_60_10_16_4_SSK
+2,snova,lvl5,SNOVA_66_15_16_3_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_66_15_16_3_ESK
+2,snova,lvl5,SNOVA_66_15_16_3_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_66_15_16_3_SHAKE_ESK
+2,snova,lvl5,SNOVA_66_15_16_3_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_66_15_16_3_SHAKE_SSK
+2,snova,lvl5,SNOVA_66_15_16_3_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_66_15_16_3_SSK
+2,snova,lvl5,SNOVA_75_33_16_2_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_75_33_16_2_ESK
+2,snova,lvl5,SNOVA_75_33_16_2_SHAKE_ESK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_75_33_16_2_SHAKE_ESK
+2,snova,lvl5,SNOVA_75_33_16_2_SHAKE_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_75_33_16_2_SHAKE_SSK
+2,snova,lvl5,SNOVA_75_33_16_2_SSK,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_75_33_16_2_SSK
+2,sqisign,lvl3,sqisign_lvl3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sqisign --additional_options SQISIGN_BUILD_TYPE=broadwell CMAKE_BUILD_TYPE=Release
+2,sqisign,lvl5,sqisign_lvl5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sqisign --additional_options SQISIGN_BUILD_TYPE=broadwell CMAKE_BUILD_TYPE=Release
+2,sqisign,lvl1,sqisign_lvl1,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sqisign --additional_options SQISIGN_BUILD_TYPE=broadwell CMAKE_BUILD_TYPE=Release
+2,mayo,lvl1,mayo_1,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mayo
+2,mayo,lvl1,mayo_2,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mayo
+2,mayo,lvl3,mayo_3,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mayo
+2,mayo,lvl5,mayo_5,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate mayo
+2,sdith,lvl1,sdith_cat1_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat1_fast
+2,sdith,lvl1,sdith_cat1_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat1_short
+2,sdith,lvl3,sdith_cat3_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat3_fast
+2,sdith,lvl3,sdith_cat3_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat3_short
+2,sdith,lvl5,sdith_cat5_fast,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat5_fast
+2,sdith,lvl5,sdith_cat5_short,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate sdith --instances sdith_cat5_short
+2,qruov,lvl1,qruov1q127L3v156m54,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov1q127L3v156m54
+2,qruov,lvl1,qruov1q31L10v600m70,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov1q31L10v600m70
+2,qruov,lvl1,qruov1q31L3v165m60,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov1q31L3v165m60
+2,qruov,lvl1,qruov1q7L10v740m100,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov1q7L10v740m100
+2,qruov,lvl3,qruov3q127L3v228m78,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov3q127L3v228m78
+2,qruov,lvl3,qruov3q31L10v890m100,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov3q31L10v890m100
+2,qruov,lvl3,qruov3q31L3v246m87,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov3q31L3v246m87
+2,qruov,lvl3,qruov3q7L10v1100m140,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov3q7L10v1100m140
+2,qruov,lvl5,qruov5q127L3v306m105,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov5q127L3v306m105
+2,qruov,lvl5,qruov5q31L10v1120m120,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov5q31L10v1120m120
+2,qruov,lvl5,qruov5q31L3v324m114,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov5q31L3v324m114
+2,qruov,lvl5,qruov5q7L10v1490m190,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate qruov --instances qruov5q7L10v1490m190
+2,uov,lvl1,uov_OV16_160_64_4rAES_classic,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Ip
+2,uov,lvl1,uov_OV16_160_64_4rAES_pkc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Ip_pkc
+2,uov,lvl1,uov_OV16_160_64_4rAES_pkc+skc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Ip_pkc_skc
+2,uov,lvl3,uov_OV256_112_44_4rAES_classic,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/III
+2,uov,lvl3,uov_OV256_112_44_4rAES_pkc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/III_pkc
+2,uov,lvl3,uov_OV256_112_44_4rAES_pkc+skc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/III_pkc_skc
+2,uov,lvl5,uov_OV256_184_72_4rAES_classic,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/V
+2,uov,lvl5,uov_OV256_184_72_4rAES_pkc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/V_pkc
+2,uov,lvl5,uov_OV256_184_72_4rAES_pkc+skc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/V_pkc_skc
+2,uov,lvl5,uov_OV256_244_96_4rAES_classic,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Is
+2,uov,lvl5,uov_OV256_244_96_4rAES_pkc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Is_pkc
+2,uov,lvl5,uov_OV256_244_96_4rAES_pkc+skc,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,NOT ANALYZED,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate uov --instances avx2/Is_pkc_skc
+2,faest,lvl1,faest_128f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl1,faest_128s,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl3,faest_192f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl3,faest_192s,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl5,faest_256f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl5,faest_256s,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl1,faest_em_128f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl1,faest_em_128s,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl3,faest_em_192f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl3,faest_em_192s,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl5,faest_em_256f,Sign,-,-,-,-,-,-,-,-,-
+2,faest,lvl5,faest_em_256s,Sign,-,-,-,-,-,-,-,-,-
+1,snova,lvl1,SNOVA-24-5-16-4-esk,Sign,OK,TRUE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-24-5-16-4-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-25-8-16-3-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-25-8-16-3-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-28-17-16-2-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-28-17-16-2-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-37-8-16-4-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-37-8-16-4-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-43-25-16-2-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-43-25-16-2-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-49-11-16-3-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-49-11-16-3-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-60-10-16-4-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-60-10-16-4-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-61-33-16-2-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-61-33-16-2-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-66-15-16-3-esk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,snova,lvl1,SNOVA-66-15-16-3-ssk,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,PREON,lvl1,Preon128,Sign,OK,TRUE POSITIVE,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,PREON,lvl1,Preon192,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
+1,PREON,lvl1,Preon256,Sign,OK,NOT ANALYZED,OK,-,-,-,OK,FALSE POSITIVE,pqdss-ct-tests  --tools binsec/dudect/timecop --candidate snova --instances SNOVA_24_5_16_4_ESK
