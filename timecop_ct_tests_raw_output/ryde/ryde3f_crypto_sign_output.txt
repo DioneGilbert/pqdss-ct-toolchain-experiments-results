@@ -1,0 +1,314 @@
+==13204== Memcheck, a memory error detector
+==13204== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==13204== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==13204== Command: ./candidates/mpc-in-the-head/ryde/timecop/ryde3f/ryde_sign/taint_crypto_sign
+==13204== Parent PID: 12474
+==13204== 
+--13204-- 
+--13204-- Valgrind options:
+--13204--    -s
+--13204--    --track-origins=yes
+--13204--    --leak-check=full
+--13204--    --show-leak-kinds=all
+--13204--    --verbose
+--13204--    --log-file=candidates/mpc-in-the-head/ryde/timecop/ryde3f/ryde_sign/crypto_sign_output.txt
+--13204-- Contents of /proc/version:
+--13204--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--13204-- 
+--13204-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--13204-- Page sizes: currently 4096, max supported 4096
+--13204-- Valgrind library directory: /usr/libexec/valgrind
+--13204-- Reading syms from /home/new_tests/candidates/mpc-in-the-head/ryde/timecop/ryde3f/ryde_sign/taint_crypto_sign
+--13204-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--13204--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--13204--   .. build-id is valid
+--13204-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--13204--    object doesn't have a dynamic symbol table
+--13204-- Scheduler: using generic scheduler lock implementation.
+--13204-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==13204== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-13204-by-???-on-4b5b578b17e8
+==13204== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-13204-by-???-on-4b5b578b17e8
+==13204== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-13204-by-???-on-4b5b578b17e8
+==13204== 
+==13204== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==13204== don't want to do, unless you know exactly what you're doing,
+==13204== or are doing some strange experiment):
+==13204==   /usr/libexec/valgrind/../../bin/vgdb --pid=13204 ...command...
+==13204== 
+==13204== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==13204==   /path/to/gdb ./candidates/mpc-in-the-head/ryde/timecop/ryde3f/ryde_sign/taint_crypto_sign
+==13204== and then give GDB the following command
+==13204==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=13204
+==13204== --pid is optional if only one valgrind process is running
+==13204== 
+--13204-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--13204-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--13204-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--13204-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--13204-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--13204--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--13204--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--13204-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--13204-- Reading syms from /home/new_tests/candidates/mpc-in-the-head/ryde/Optimized_Implementation/ryde1s/build/libcttest.so
+--13204-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--13204--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--13204--   .. build-id is valid
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x0491bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--13204--     new: 0x0491bc60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x0491bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--13204--     new: 0x0491bc60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x0491bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--13204--     new: 0x0491bc60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==13204== WARNING: new redirection conflicts with existing -- ignoring it
+--13204--     old: 0x0491bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--13204--     new: 0x0491bc60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--13204-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+--13204-- REDIR: 0x491e720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e9e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e2e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493ccd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f6d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493b540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491fc10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493b370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f5a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==13204== Preferring higher priority redirection:
+--13204--     old: 0x04a167c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--13204--     new: 0x04a167c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--13204-- REDIR: 0x493b3f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f9e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493b9b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491fa70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493b470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e1d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491fb60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x4927570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x4921010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491fb10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e6a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491e8d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x493ba40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f3f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491eb00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f7d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491fac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x4920f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x49aa280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x491f310 (libc.so.6:strstr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--13204-- REDIR: 0x4a13610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--13204-- REDIR: 0x4a137e0 (libc.so.6:__strlen_avx2) redirected to 0x4851e50 (strlen)
+--13204-- REDIR: 0x4a0ed80 (libc.so.6:__strncmp_avx2) redirected to 0x4852670 (strncmp)
+--13204-- REDIR: 0x491c520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--13204-- Warning: cross-CU LIMITATION: some inlined fn names
+--13204-- might be shown as UnknownInlinedFun
+--13204-- REDIR: 0x491b0a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+--13204-- REDIR: 0x4a16f80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--13204-- REDIR: 0x491b740 (libc.so.6:realloc) redirected to 0x4850384 (realloc)
+--13204-- REDIR: 0x491efc0 (libc.so.6:__GI_strstr) redirected to 0x4856ba0 (__strstr_sse2)
+--13204-- REDIR: 0x4a13180 (libc.so.6:__strchr_avx2) redirected to 0x48519c0 (index)
+--13204-- REDIR: 0x491b3e0 (libc.so.6:free) redirected to 0x484baba (free)
+--13204-- REDIR: 0x4a167c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--13204-- REDIR: 0x4a14cb0 (libc.so.6:__strcpy_avx2) redirected to 0x4851fa0 (strcpy)
+--13204-- REDIR: 0x4a0f2c0 (libc.so.6:__memchr_avx2) redirected to 0x48530a0 (memchr)
+--13204-- REDIR: 0x4a0e940 (libc.so.6:__strcmp_avx2) redirected to 0x4852f20 (strcmp)
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4863BBB: rbc_53_vec_set_random_full_rank_with_one (rbc_53_vec.c:109)
+==13204==    by 0x486665F: ryde_1s_secret_key_from_string (parsing.c:117)
+==13204==    by 0x486A3AB: ryde_1s_sign.part.0 (signature.c:120)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x486ADF8: ryde_1s_sign.part.0 (signature.c:339)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866BF8: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:176)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866CA6: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:176)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C32: UnknownInlinedFun (ggm_tree.c:110)
+==13204==    by 0x4866C32: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:177)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C38: UnknownInlinedFun (ggm_tree.c:114)
+==13204==    by 0x4866C38: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:177)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C89: UnknownInlinedFun (ggm_tree.c:83)
+==13204==    by 0x4866C89: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:183)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Use of uninitialised value of size 8
+==13204==    at 0x4866CDD: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:192)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Use of uninitialised value of size 8
+==13204==    at 0x48675A0: UnknownInlinedFun (emmintrin.h:703)
+==13204==    by 0x48675A0: UnknownInlinedFun (rijndael_avx.h:36)
+==13204==    by 0x48675A0: UnknownInlinedFun (seed_expand_functions_avx.h:154)
+==13204==    by 0x48675A0: UnknownInlinedFun (tcith.c:21)
+==13204==    by 0x48675A0: ryde_1s_tcith_commit (tcith.c:118)
+==13204==    by 0x486AF1F: ryde_1s_sign.part.0 (signature.c:369)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== Warning: client switching stacks?  SP change: 0x1ffedee650 --> 0x1fff000188
+==13204==          to suppress, use: --max-stackframe=2169656 or greater
+==13204== 
+==13204== HEAP SUMMARY:
+==13204==     in use at exit: 0 bytes in 0 blocks
+==13204==   total heap usage: 6,721 allocs, 6,721 frees, 941,314 bytes allocated
+==13204== 
+==13204== All heap blocks were freed -- no leaks are possible
+==13204== 
+==13204== ERROR SUMMARY: 69788 errors from 9 contexts (suppressed: 0 from 0)
+==13204== 
+==13204== 1 errors in context 1 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4863BBB: rbc_53_vec_set_random_full_rank_with_one (rbc_53_vec.c:109)
+==13204==    by 0x486665F: ryde_1s_secret_key_from_string (parsing.c:117)
+==13204==    by 0x486A3AB: ryde_1s_sign.part.0 (signature.c:120)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 11 errors in context 2 of 9:
+==13204== Use of uninitialised value of size 8
+==13204==    at 0x48675A0: UnknownInlinedFun (emmintrin.h:703)
+==13204==    by 0x48675A0: UnknownInlinedFun (rijndael_avx.h:36)
+==13204==    by 0x48675A0: UnknownInlinedFun (seed_expand_functions_avx.h:154)
+==13204==    by 0x48675A0: UnknownInlinedFun (tcith.c:21)
+==13204==    by 0x48675A0: ryde_1s_tcith_commit (tcith.c:118)
+==13204==    by 0x486AF1F: ryde_1s_sign.part.0 (signature.c:369)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 121 errors in context 3 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866BF8: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:176)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 1344 errors in context 4 of 9:
+==13204== Use of uninitialised value of size 8
+==13204==    at 0x4866CDD: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:192)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 1366 errors in context 5 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x486ADF8: ryde_1s_sign.part.0 (signature.c:339)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 1454 errors in context 6 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866CA6: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:176)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 8613 errors in context 7 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C38: UnknownInlinedFun (ggm_tree.c:114)
+==13204==    by 0x4866C38: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:177)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 8723 errors in context 8 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C32: UnknownInlinedFun (ggm_tree.c:110)
+==13204==    by 0x4866C32: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:177)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== 
+==13204== 48155 errors in context 9 of 9:
+==13204== Conditional jump or move depends on uninitialised value(s)
+==13204==    at 0x4866C89: UnknownInlinedFun (ggm_tree.c:83)
+==13204==    by 0x4866C89: ryde_1s_ggm_tree_get_sibling_path (ggm_tree.c:183)
+==13204==    by 0x486AE2E: ryde_1s_sign.part.0 (signature.c:351)
+==13204==    by 0x486B5FC: crypto_sign (sign.c:49)
+==13204==    by 0x1092A7: main (taint_crypto_sign.c:33)
+==13204==  Uninitialised value was created by a client request
+==13204==    at 0x109286: main (taint_crypto_sign.c:33)
+==13204== 
+==13204== ERROR SUMMARY: 69788 errors from 9 contexts (suppressed: 0 from 0)

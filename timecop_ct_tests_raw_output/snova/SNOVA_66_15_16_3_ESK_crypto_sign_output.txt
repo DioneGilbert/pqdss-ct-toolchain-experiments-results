@@ -1,0 +1,1149 @@
+==48025== Memcheck, a memory error detector
+==48025== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==48025== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==48025== Command: ./candidates/multivariate/snova/timecop/SNOVA_66_15_16_3_ESK/snova_sign/taint_crypto_sign
+==48025== Parent PID: 44826
+==48025== 
+--48025-- 
+--48025-- Valgrind options:
+--48025--    -s
+--48025--    --track-origins=yes
+--48025--    --leak-check=full
+--48025--    --show-leak-kinds=all
+--48025--    --leak-resolution=low
+--48025--    --verbose
+--48025--    --log-file=candidates/multivariate/snova/timecop/SNOVA_66_15_16_3_ESK/snova_sign/crypto_sign_output.txt
+--48025-- Contents of /proc/version:
+--48025--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--48025-- 
+--48025-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--48025-- Page sizes: currently 4096, max supported 4096
+--48025-- Valgrind library directory: /usr/libexec/valgrind
+--48025-- Reading syms from /home/new_tests/candidates/multivariate/snova/timecop/SNOVA_66_15_16_3_ESK/snova_sign/taint_crypto_sign
+--48025-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--48025--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--48025--   .. build-id is valid
+--48025-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--48025--    object doesn't have a dynamic symbol table
+--48025-- Scheduler: using generic scheduler lock implementation.
+--48025-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==48025== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-48025-by-???-on-4b5b578b17e8
+==48025== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-48025-by-???-on-4b5b578b17e8
+==48025== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-48025-by-???-on-4b5b578b17e8
+==48025== 
+==48025== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==48025== don't want to do, unless you know exactly what you're doing,
+==48025== or are doing some strange experiment):
+==48025==   /usr/libexec/valgrind/../../bin/vgdb --pid=48025 ...command...
+==48025== 
+==48025== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==48025==   /path/to/gdb ./candidates/multivariate/snova/timecop/SNOVA_66_15_16_3_ESK/snova_sign/taint_crypto_sign
+==48025== and then give GDB the following command
+==48025==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=48025
+==48025== --pid is optional if only one valgrind process is running
+==48025== 
+--48025-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--48025-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--48025-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--48025-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--48025-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--48025--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--48025--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--48025-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--48025-- Reading syms from /home/new_tests/candidates/multivariate/snova/build/SNOVA_66_15_16_3_ESK/libcttest.so
+--48025-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--48025--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--48025--   .. build-id is valid
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x04944c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--48025--     new: 0x04944c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x04944c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--48025--     new: 0x04944c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x04944c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--48025--     new: 0x04944c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==48025== WARNING: new redirection conflicts with existing -- ignoring it
+--48025--     old: 0x04944c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--48025--     new: 0x04944c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--48025-- REDIR: 0x4947720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49479e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49472e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4965cd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49486d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4964540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4964370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49485a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==48025== Preferring higher priority redirection:
+--48025--     old: 0x04a3f7c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--48025--     new: 0x04a3f7c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--48025-- REDIR: 0x49643f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49489e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49649b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948a70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4964470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49471d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948b60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4950570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x494a010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948b10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49476a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49478d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4964a40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49483f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4947b00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x49487d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4948ac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4949f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4a3c610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--48025-- REDIR: 0x4a3ff80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--48025-- REDIR: 0x4945520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--48025-- REDIR: 0x49440a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+--48025-- REDIR: 0x49443e0 (libc.so.6:free) redirected to 0x484baba (free)
+--48025-- REDIR: 0x4a3c7e0 (libc.so.6:__strlen_avx2) redirected to 0x4851e50 (strlen)
+--48025-- REDIR: 0x4a3f7c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--48025-- memcheck GC: 1000 nodes, 1000 survivors (100.0%)
+--48025-- memcheck GC: 1414 new table size (stepup)
+--48025-- memcheck GC: 1414 nodes, 1414 survivors (100.0%)
+--48025-- memcheck GC: 1999 new table size (stepup)
+--48025-- memcheck GC: 1999 nodes, 1999 survivors (100.0%)
+--48025-- memcheck GC: 2827 new table size (stepup)
+--48025-- memcheck GC: 2827 nodes, 2827 survivors (100.0%)
+--48025-- memcheck GC: 3997 new table size (stepup)
+--48025-- memcheck GC: 3997 nodes, 3997 survivors (100.0%)
+--48025-- memcheck GC: 5652 new table size (stepup)
+--48025-- memcheck GC: 5652 nodes, 5652 survivors (100.0%)
+--48025-- memcheck GC: 7993 new table size (stepup)
+--48025-- memcheck GC: 7993 nodes, 7993 survivors (100.0%)
+--48025-- memcheck GC: 11303 new table size (stepup)
+--48025-- memcheck GC: 11303 nodes, 11303 survivors (100.0%)
+--48025-- memcheck GC: 15984 new table size (stepup)
+--48025-- memcheck GC: 15984 nodes, 15984 survivors (100.0%)
+--48025-- memcheck GC: 22604 new table size (stepup)
+--48025-- memcheck GC: 22604 nodes, 22604 survivors (100.0%)
+--48025-- memcheck GC: 31966 new table size (stepup)
+--48025-- memcheck GC: 31966 nodes, 31966 survivors (100.0%)
+--48025-- memcheck GC: 45206 new table size (stepup)
+--48025-- memcheck GC: 45206 nodes, 45206 survivors (100.0%)
+--48025-- memcheck GC: 63930 new table size (stepup)
+--48025-- REDIR: 0x49d3280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--48025-- REDIR: 0x4a3f790 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4856a90 (__memcpy_chk)
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4873ECB: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4873EE9: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4873EE9: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487405F: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4874075: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4874075: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48741DA: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48741EF: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x48741EF: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876949: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487697E: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487697E: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876AAD: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876AC7: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876AC7: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876C40: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876C81: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876C81: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876DAF: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876DC2: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876DC2: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876F17: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876F2E: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876F2E: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48770F1: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4877107: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4877107: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+--48025-- memcheck GC: 63930 nodes, 62736 survivors (98.1%)
+--48025-- memcheck GC: 90410 new table size (stepup)
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48792B5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x48792B5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:224)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487938D: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487938D: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:224)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A36F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A36F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:306)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A3AB: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A3AB: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:306)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A5B6: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A5B6: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A5E5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A5E5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A624: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A624: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A663: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A663: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A68A: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A68A: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A6BA: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A6BA: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A6EA: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A6EA: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A711: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A711: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A746: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A746: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A79D: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A79D: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A823: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A823: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A8AE: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A8AE: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AA5B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AA5B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:367)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AA93: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AA93: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:367)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AC2F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AC2F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AC66: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AC66: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ACA5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ACA5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ACE4: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ACE4: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD0B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD0B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD3B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD3B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD6B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD6B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD92: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD92: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ADC3: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ADC3: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AE0F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AE0F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AEA2: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AEA2: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AF39: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AF39: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== Conditional jump or move depends on uninitialised value(s)
+==48025==    at 0x487BE7A: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:480)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== HEAP SUMMARY:
+==48025==     in use at exit: 0 bytes in 0 blocks
+==48025==   total heap usage: 13 allocs, 13 frees, 3,199 bytes allocated
+==48025== 
+==48025== All heap blocks were freed -- no leaks are possible
+==48025== 
+==48025== ERROR SUMMARY: 224101 errors from 49 contexts (suppressed: 0 from 0)
+==48025== 
+==48025== 1 errors in context 1 of 49:
+==48025== Conditional jump or move depends on uninitialised value(s)
+==48025==    at 0x487BE7A: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:480)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 2 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ADC3: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ADC3: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 3 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD92: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD92: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 4 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD6B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD6B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 5 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD3B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD3B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 6 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AD0B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AD0B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 7 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ACE4: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ACE4: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 8 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487ACA5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487ACA5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 9 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AC66: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AC66: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 10 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AC2F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AC2F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:394)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 11 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A746: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A746: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 12 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A711: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A711: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 13 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A6EA: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A6EA: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 14 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A6BA: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A6BA: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 15 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A68A: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A68A: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 16 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A663: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A663: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 17 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A624: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A624: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 18 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A5E5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A5E5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 19 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A5B6: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A5B6: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:337)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 20 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4877107: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4877107: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 21 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48770F1: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 22 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876F2E: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876F2E: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 23 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876F17: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 24 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876DC2: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876DC2: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:97)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 25 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876DAF: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:95)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 26 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876C81: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876C81: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 27 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876C40: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 28 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876AC7: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4876AC7: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 29 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876AAD: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 30 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487697E: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487697E: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:85)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 180 errors in context 31 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4876949: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:83)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 32 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48741EF: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x48741EF: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 33 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48741DA: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 34 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4874075: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4874075: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 35 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487405F: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 36 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4873EE9: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x4873EE9: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:54)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 270 errors in context 37 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x4873ECB: calc_LR_J_vtl (snova_plasma_avx2_gnl_sign.h:52)
+==48025==    by 0x4879092: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:204)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 360 errors in context 38 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AA5B: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AA5B: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:367)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 360 errors in context 39 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A36F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A36F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:306)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 40 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AF39: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AF39: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 41 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AEA2: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AEA2: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 42 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AE0F: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AE0F: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:410)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 43 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A8AE: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A8AE: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 44 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A823: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A823: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 540 errors in context 45 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A79D: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A79D: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:353)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 35640 errors in context 46 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487938D: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487938D: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:224)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 35640 errors in context 47 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x48792B5: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x48792B5: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:224)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 70920 errors in context 48 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487AA93: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487AA93: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:367)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== 
+==48025== 70920 errors in context 49 of 49:
+==48025== Use of uninitialised value of size 8
+==48025==    at 0x487A3AB: _mm256_shuffle_epi8 (avx2intrin.h:590)
+==48025==    by 0x487A3AB: sign_digest_core_gnl_vtl (snova_plasma_avx2_gnl_sign.h:306)
+==48025==    by 0x487DB86: sign_digest_esk (snova.c:221)
+==48025==    by 0x487E4C6: crypto_sign (sign.c:37)
+==48025==    by 0x1092C2: main (taint_crypto_sign.c:33)
+==48025==  Uninitialised value was created by a client request
+==48025==    at 0x1092A1: main (taint_crypto_sign.c:32)
+==48025== 
+==48025== ERROR SUMMARY: 224101 errors from 49 contexts (suppressed: 0 from 0)

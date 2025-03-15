@@ -1,0 +1,586 @@
+==17765== Memcheck, a memory error detector
+==17765== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==17765== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==17765== Command: ./candidates/multivariate/qruov/timecop/qruov1q31L3v165m60/qruov_sign/taint_crypto_sign
+==17765== Parent PID: 16928
+==17765== 
+--17765-- 
+--17765-- Valgrind options:
+--17765--    -s
+--17765--    --track-origins=yes
+--17765--    --leak-check=full
+--17765--    --show-leak-kinds=all
+--17765--    --verbose
+--17765--    --log-file=candidates/multivariate/qruov/timecop/qruov1q31L3v165m60/qruov_sign/crypto_sign_output.txt
+--17765-- Contents of /proc/version:
+--17765--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--17765-- 
+--17765-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--17765-- Page sizes: currently 4096, max supported 4096
+--17765-- Valgrind library directory: /usr/libexec/valgrind
+--17765-- Reading syms from /home/new_tests/candidates/multivariate/qruov/timecop/qruov1q31L3v165m60/qruov_sign/taint_crypto_sign
+--17765-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--17765--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--17765--   .. build-id is valid
+--17765-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--17765--    object doesn't have a dynamic symbol table
+--17765-- Scheduler: using generic scheduler lock implementation.
+--17765-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==17765== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-17765-by-???-on-4b5b578b17e8
+==17765== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-17765-by-???-on-4b5b578b17e8
+==17765== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-17765-by-???-on-4b5b578b17e8
+==17765== 
+==17765== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==17765== don't want to do, unless you know exactly what you're doing,
+==17765== or are doing some strange experiment):
+==17765==   /usr/libexec/valgrind/../../bin/vgdb --pid=17765 ...command...
+==17765== 
+==17765== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==17765==   /path/to/gdb ./candidates/multivariate/qruov/timecop/qruov1q31L3v165m60/qruov_sign/taint_crypto_sign
+==17765== and then give GDB the following command
+==17765==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=17765
+==17765== --pid is optional if only one valgrind process is running
+==17765== 
+--17765-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--17765-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--17765-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--17765-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--17765-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--17765--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--17765--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--17765-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--17765-- Reading syms from /home/new_tests/candidates/multivariate/qruov/src/build/qruov1q31L3v165m60/libcttest.so
+--17765-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--17765--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--17765--   .. build-id is valid
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x0494ec60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--17765--     new: 0x0494ec60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x0494ec60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--17765--     new: 0x0494ec60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x0494ec60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--17765--     new: 0x0494ec60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==17765== WARNING: new redirection conflicts with existing -- ignoring it
+--17765--     old: 0x0494ec60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--17765--     new: 0x0494ec60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--17765-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+--17765-- REDIR: 0x4951720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49519e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49512e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496fcd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49526d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496e540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496e370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49525a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==17765== Preferring higher priority redirection:
+--17765--     old: 0x04a497c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--17765--     new: 0x04a497c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--17765-- REDIR: 0x496e3f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49529e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496e9b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952a70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496e470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49511d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952b60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x495a570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4954010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952b10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49516a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49518d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x496ea40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49523f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4951b00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49527d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952ac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4953f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x49dd280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4952310 (libc.so.6:strstr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--17765-- REDIR: 0x4a46610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--17765-- REDIR: 0x4a467e0 (libc.so.6:__strlen_avx2) redirected to 0x4851e50 (strlen)
+--17765-- REDIR: 0x4a41d80 (libc.so.6:__strncmp_avx2) redirected to 0x4852670 (strncmp)
+--17765-- REDIR: 0x494f520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--17765-- REDIR: 0x4a49f80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--17765-- REDIR: 0x494e0a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+--17765-- REDIR: 0x494e740 (libc.so.6:realloc) redirected to 0x4850384 (realloc)
+--17765-- REDIR: 0x4951fc0 (libc.so.6:__GI_strstr) redirected to 0x4856ba0 (__strstr_sse2)
+--17765-- REDIR: 0x4a46180 (libc.so.6:__strchr_avx2) redirected to 0x48519c0 (index)
+--17765-- REDIR: 0x494e3e0 (libc.so.6:free) redirected to 0x484baba (free)
+--17765-- REDIR: 0x4a497c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--17765-- REDIR: 0x4a47cb0 (libc.so.6:__strcpy_avx2) redirected to 0x4851fa0 (strcpy)
+--17765-- REDIR: 0x4a422c0 (libc.so.6:__memchr_avx2) redirected to 0x48530a0 (memchr)
+--17765-- REDIR: 0x4a41940 (libc.so.6:__strcmp_avx2) redirected to 0x4852f20 (strcmp)
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861F9C: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861F9C: RejSamp (qruov.c:135)
+==17765==    by 0x4861F9C: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861F9C: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FB6: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861FB6: RejSamp (qruov.c:135)
+==17765==    by 0x4861FB6: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FB6: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FC9: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861FC9: RejSamp (qruov.c:135)
+==17765==    by 0x4861FC9: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FC9: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FD1: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861FD1: RejSamp (qruov.c:135)
+==17765==    by 0x4861FD1: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FD1: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x486196B: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x486196B: RejSamp (qruov.c:135)
+==17765==    by 0x486196B: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x486196B: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861985: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861985: RejSamp (qruov.c:135)
+==17765==    by 0x4861985: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861985: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861999: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861999: RejSamp (qruov.c:135)
+==17765==    by 0x4861999: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861999: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x48619A1: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x48619A1: RejSamp (qruov.c:135)
+==17765==    by 0x48619A1: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x48619A1: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+--17765-- memcheck GC: 1000 nodes, 993 survivors (99.3%)
+--17765-- memcheck GC: 1414 new table size (stepup)
+--17765-- memcheck GC: 1414 nodes, 1414 survivors (100.0%)
+--17765-- memcheck GC: 1999 new table size (stepup)
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B4B: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861B4B: RejSamp (qruov.c:135)
+==17765==    by 0x4861B4B: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B4B: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B65: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861B65: RejSamp (qruov.c:135)
+==17765==    by 0x4861B65: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B65: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B78: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861B78: RejSamp (qruov.c:135)
+==17765==    by 0x4861B78: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B78: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B80: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861B80: RejSamp (qruov.c:135)
+==17765==    by 0x4861B80: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B80: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+--17765-- memcheck GC: 1999 nodes, 1999 survivors (100.0%)
+--17765-- memcheck GC: 2827 new table size (stepup)
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B53: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861B53: RejSamp (qruov.c:135)
+==17765==    by 0x4861B53: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B53: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861973: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861973: RejSamp (qruov.c:135)
+==17765==    by 0x4861973: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861973: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x48633A5: LU_decompose (qruov.c:406)
+==17765==    by 0x48633A5: QRUOV_Sign (qruov.c:685)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== Use of uninitialised value of size 8
+==17765==    at 0x48633E2: Fq_inv (Fql.h:35)
+==17765==    by 0x48633E2: LU_decompose (qruov.c:418)
+==17765==    by 0x48633E2: QRUOV_Sign (qruov.c:685)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861DD1: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861DD1: RejSamp (qruov.c:135)
+==17765==    by 0x4861DD1: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861DF3: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861DF3: RejSamp (qruov.c:135)
+==17765==    by 0x4861DF3: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861E06: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861E06: RejSamp (qruov.c:135)
+==17765==    by 0x4861E06: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== Use of uninitialised value of size 8
+==17765==    at 0x4863CFB: sample_a_solution (qruov.c:514)
+==17765==    by 0x4863CFB: QRUOV_Sign (qruov.c:698)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== 
+==17765== HEAP SUMMARY:
+==17765==     in use at exit: 0 bytes in 0 blocks
+==17765==   total heap usage: 7,524 allocs, 7,524 frees, 1,175,638 bytes allocated
+==17765== 
+==17765== All heap blocks were freed -- no leaks are possible
+==17765== 
+==17765== ERROR SUMMARY: 494192 errors from 20 contexts (suppressed: 0 from 0)
+==17765== 
+==17765== 1 errors in context 1 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861E06: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861E06: RejSamp (qruov.c:135)
+==17765==    by 0x4861E06: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 1 errors in context 2 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861DD1: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861DD1: RejSamp (qruov.c:135)
+==17765==    by 0x4861DD1: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 1 errors in context 3 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861973: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861973: RejSamp (qruov.c:135)
+==17765==    by 0x4861973: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861973: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 1 errors in context 4 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861F9C: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861F9C: RejSamp (qruov.c:135)
+==17765==    by 0x4861F9C: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861F9C: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 2 errors in context 5 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FD1: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861FD1: RejSamp (qruov.c:135)
+==17765==    by 0x4861FD1: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FD1: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 3 errors in context 6 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B53: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861B53: RejSamp (qruov.c:135)
+==17765==    by 0x4861B53: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B53: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 60 errors in context 7 of 20:
+==17765== Use of uninitialised value of size 8
+==17765==    at 0x4863CFB: sample_a_solution (qruov.c:514)
+==17765==    by 0x4863CFB: QRUOV_Sign (qruov.c:698)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== 
+==17765== 60 errors in context 8 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861DF3: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861DF3: RejSamp (qruov.c:135)
+==17765==    by 0x4861DF3: Hash (qruov.c:243)
+==17765==    by 0x4863640: QRUOV_Sign (qruov.c:693)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 60 errors in context 9 of 20:
+==17765== Use of uninitialised value of size 8
+==17765==    at 0x48633E2: Fq_inv (Fql.h:35)
+==17765==    by 0x48633E2: LU_decompose (qruov.c:418)
+==17765==    by 0x48633E2: QRUOV_Sign (qruov.c:685)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== 
+==17765== 60 errors in context 10 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B4B: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x4861B4B: RejSamp (qruov.c:135)
+==17765==    by 0x4861B4B: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B4B: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 60 errors in context 11 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x486196B: rejsamp_rejection_with_aux (qruov.c:119)
+==17765==    by 0x486196B: RejSamp (qruov.c:135)
+==17765==    by 0x486196B: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x486196B: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 63 errors in context 12 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x48633A5: LU_decompose (qruov.c:406)
+==17765==    by 0x48633A5: QRUOV_Sign (qruov.c:685)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765== 
+==17765== 
+==17765== 102 errors in context 13 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FC9: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861FC9: RejSamp (qruov.c:135)
+==17765==    by 0x4861FC9: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FC9: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 195 errors in context 14 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B80: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861B80: RejSamp (qruov.c:135)
+==17765==    by 0x4861B80: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B80: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 290 errors in context 15 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x48619A1: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x48619A1: RejSamp (qruov.c:135)
+==17765==    by 0x48619A1: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x48619A1: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 3300 errors in context 16 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861FB6: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861FB6: RejSamp (qruov.c:135)
+==17765==    by 0x4861FB6: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861FB6: Expand_sk (qruov.c:306)
+==17765==    by 0x486238C: QRUOV_Sign (qruov.c:648)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 6106 errors in context 17 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B78: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861B78: RejSamp (qruov.c:135)
+==17765==    by 0x4861B78: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B78: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 8627 errors in context 18 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861999: rejsamp_rejection_with_aux (qruov.c:123)
+==17765==    by 0x4861999: RejSamp (qruov.c:135)
+==17765==    by 0x4861999: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861999: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 198000 errors in context 19 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861B65: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861B65: RejSamp (qruov.c:135)
+==17765==    by 0x4861B65: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861B65: Expand_pk (qruov.c:331)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== 
+==17765== 277200 errors in context 20 of 20:
+==17765== Conditional jump or move depends on uninitialised value(s)
+==17765==    at 0x4861985: rejsamp_rejection_with_aux (qruov.c:121)
+==17765==    by 0x4861985: RejSamp (qruov.c:135)
+==17765==    by 0x4861985: RejSampPRG_aes_ctr (qruov.c:197)
+==17765==    by 0x4861985: Expand_pk (qruov.c:326)
+==17765==    by 0x4862A1D: QRUOV_Sign (qruov.c:653)
+==17765==    by 0x486709E: crypto_sign (sign.c:50)
+==17765==    by 0x1092B7: main (taint_crypto_sign.c:33)
+==17765==  Uninitialised value was created by a client request
+==17765==    at 0x109296: main (taint_crypto_sign.c:32)
+==17765== 
+==17765== ERROR SUMMARY: 494192 errors from 20 contexts (suppressed: 0 from 0)

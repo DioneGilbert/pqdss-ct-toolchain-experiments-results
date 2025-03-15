@@ -1,0 +1,2488 @@
+==15516== Memcheck, a memory error detector
+==15516== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==15516== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==15516== Command: ./candidates/mpc-in-the-head/sdith/timecop/sdith_cat3_fast/sdith_sign/taint_crypto_sign
+==15516== Parent PID: 13208
+==15516== 
+--15516-- 
+--15516-- Valgrind options:
+--15516--    -s
+--15516--    --track-origins=yes
+--15516--    --leak-check=full
+--15516--    --show-leak-kinds=all
+--15516--    --verbose
+--15516--    --log-file=candidates/mpc-in-the-head/sdith/timecop/sdith_cat3_fast/sdith_sign/crypto_sign_output.txt
+--15516-- Contents of /proc/version:
+--15516--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--15516-- 
+--15516-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--15516-- Page sizes: currently 4096, max supported 4096
+--15516-- Valgrind library directory: /usr/libexec/valgrind
+--15516-- Reading syms from /home/new_tests/candidates/mpc-in-the-head/sdith/timecop/sdith_cat3_fast/sdith_sign/taint_crypto_sign
+--15516-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--15516--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--15516--   .. build-id is valid
+--15516-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--15516--    object doesn't have a dynamic symbol table
+--15516-- Scheduler: using generic scheduler lock implementation.
+--15516-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==15516== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-15516-by-???-on-4b5b578b17e8
+==15516== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-15516-by-???-on-4b5b578b17e8
+==15516== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-15516-by-???-on-4b5b578b17e8
+==15516== 
+==15516== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==15516== don't want to do, unless you know exactly what you're doing,
+==15516== or are doing some strange experiment):
+==15516==   /usr/libexec/valgrind/../../bin/vgdb --pid=15516 ...command...
+==15516== 
+==15516== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==15516==   /path/to/gdb ./candidates/mpc-in-the-head/sdith/timecop/sdith_cat3_fast/sdith_sign/taint_crypto_sign
+==15516== and then give GDB the following command
+==15516==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=15516
+==15516== --pid is optional if only one valgrind process is running
+==15516== 
+--15516-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--15516-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--15516-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--15516-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--15516-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--15516--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--15516--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--15516-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--15516-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+--15516-- Reading syms from /usr/lib/x86_64-linux-gnu/libm.so.6
+--15516-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--15516--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--15516--   .. build-id is valid
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x04e32c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--15516--     new: 0x04e32c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x04e32c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--15516--     new: 0x04e32c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x04e32c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--15516--     new: 0x04e32c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==15516== WARNING: new redirection conflicts with existing -- ignoring it
+--15516--     old: 0x04e32c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--15516--     new: 0x04e32c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--15516-- REDIR: 0x4e35720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e359e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e352e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e53cd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e366d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e52540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e52370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e365a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==15516== Preferring higher priority redirection:
+--15516--     old: 0x04f2d7c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--15516--     new: 0x04f2d7c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--15516-- REDIR: 0x4e523f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e369e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e529b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36a70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e52470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e351d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36b60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e3e570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e38010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36b10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e356a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e358d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e52a40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e363f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e35b00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e367d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36ac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e37f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4ec1280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4e36310 (libc.so.6:strstr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--15516-- REDIR: 0x4f2a610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--15516-- REDIR: 0x4f2a7e0 (libc.so.6:__strlen_avx2) redirected to 0x4851e50 (strlen)
+--15516-- REDIR: 0x4f25d80 (libc.so.6:__strncmp_avx2) redirected to 0x4852670 (strncmp)
+--15516-- REDIR: 0x4e33520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--15516-- REDIR: 0x4e320a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+--15516-- REDIR: 0x4f2df80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--15516-- REDIR: 0x4e32740 (libc.so.6:realloc) redirected to 0x4850384 (realloc)
+--15516-- REDIR: 0x4e35fc0 (libc.so.6:__GI_strstr) redirected to 0x4856ba0 (__strstr_sse2)
+--15516-- REDIR: 0x4f2a180 (libc.so.6:__strchr_avx2) redirected to 0x48519c0 (index)
+--15516-- REDIR: 0x4e323e0 (libc.so.6:free) redirected to 0x484baba (free)
+--15516-- REDIR: 0x4f2d7c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--15516-- REDIR: 0x4f2bcb0 (libc.so.6:__strcpy_avx2) redirected to 0x4851fa0 (strcpy)
+--15516-- REDIR: 0x4f262c0 (libc.so.6:__memchr_avx2) redirected to 0x48530a0 (memchr)
+--15516-- REDIR: 0x4f25940 (libc.so.6:__strcmp_avx2) redirected to 0x4852f20 (strcmp)
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x10DCDF: sdith_sign (sdith_signature.c:468)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x10FE83: bitvec_is_zero_nonct (commons.c:69)
+==15516==    by 0x10DCF9: sdith_sign (sdith_signature.c:469)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117913: quickSort (ggm.c:254)
+==15516==    by 0x117913: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117913: quickSort (ggm.c:254)
+==15516==    by 0x117913: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174CB: quickSort (ggm.c:254)
+==15516==    by 0x1174CB: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174CB: quickSort (ggm.c:254)
+==15516==    by 0x1174CB: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174F7: quickSort (ggm.c:254)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x11751A: quickSort (ggm.c:254)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x11751A: quickSort (ggm.c:254)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117539: quickSort (ggm.c:254)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179C2: estimate_topen (ggm.c:345)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179E0: estimate_topen (ggm.c:354)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174F7: quickSort (ggm.c:254)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117539: quickSort (ggm.c:254)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117564: quickSort (ggm.c:254)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117564: quickSort (ggm.c:254)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x11758A: quickSort (ggm.c:254)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x11758A: quickSort (ggm.c:254)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1175AE: quickSort (ggm.c:254)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1175D3: quickSort (ggm.c:254)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1175D3: quickSort (ggm.c:254)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1175AE: quickSort (ggm.c:254)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179F0: estimate_topen (ggm.c:354)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117201: floor_log2i (ggm.c:48)
+==15516==    by 0x117201: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E6E7: memcpy (string_fortified.h:29)
+==15516==    by 0x11E6E7: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:25)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E765: memcpy (string_fortified.h:29)
+==15516==    by 0x11E765: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:27)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11726C: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559F9: is_overlap (vg_replace_strmem.c:144)
+==15516==    by 0x48559F9: is_overlap (vg_replace_strmem.c:131)
+==15516==    by 0x48559F9: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B87: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A2F: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855ADD: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855AE0: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855AEB: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117AEA: full_ggm_tree_open_sibling_path (ggm.c:392)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B60: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B63: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B6D: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E6E7: memcpy (string_fortified.h:29)
+==15516==    by 0x11E6E7: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:25)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E765: memcpy (string_fortified.h:29)
+==15516==    by 0x11E765: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:27)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11726C: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117201: floor_log2i (ggm.c:48)
+==15516==    by 0x117201: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117B0A: full_ggm_tree_open_sibling_path (ggm.c:404)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B60: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B63: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B6D: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117B34: full_ggm_tree_open_sibling_path (ggm.c:404)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== HEAP SUMMARY:
+==15516==     in use at exit: 0 bytes in 0 blocks
+==15516==   total heap usage: 6,571 allocs, 6,571 frees, 3,247,298 bytes allocated
+==15516== 
+==15516== All heap blocks were freed -- no leaks are possible
+==15516== 
+==15516== ERROR SUMMARY: 190594 errors from 98 contexts (suppressed: 0 from 0)
+==15516== 
+==15516== 1 errors in context 1 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117B34: full_ggm_tree_open_sibling_path (ggm.c:404)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 2 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B60: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 3 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 4 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 5 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 6 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 7 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 8 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 9 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 10 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 11 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 12 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 13 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 14 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 15 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 16 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 17 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 18 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 19 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117B0A: full_ggm_tree_open_sibling_path (ggm.c:404)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 20 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179F0: estimate_topen (ggm.c:354)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 21 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1 errors in context 22 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x1175E4: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 3 errors in context 23 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1175D3: quickSort (ggm.c:254)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 3 errors in context 24 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1175D3: quickSort (ggm.c:254)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x1175D3: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 4 errors in context 25 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1175AE: quickSort (ggm.c:254)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 9 errors in context 26 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1175AE: quickSort (ggm.c:254)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x1175AE: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 11 errors in context 27 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117201: floor_log2i (ggm.c:48)
+==15516==    by 0x117201: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 13 errors in context 28 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B63: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 13 errors in context 29 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 23 errors in context 30 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 23 errors in context 31 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 23 errors in context 32 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 23 errors in context 33 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 34 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B6D: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B28: full_ggm_tree_open_sibling_path (ggm.c:405)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 35 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117201: floor_log2i (ggm.c:48)
+==15516==    by 0x117201: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 36 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855ADD: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 37 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A2F: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 38 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 39 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B87: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 40 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559F9: is_overlap (vg_replace_strmem.c:144)
+==15516==    by 0x48559F9: is_overlap (vg_replace_strmem.c:131)
+==15516==    by 0x48559F9: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 41 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 42 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 43 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 44 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 45 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 46 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 47 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 48 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 49 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 50 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 24 errors in context 51 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x11758A: quickSort (ggm.c:254)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 28 errors in context 52 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x11758A: quickSort (ggm.c:254)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x11758A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 48 errors in context 53 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855AE0: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 56 errors in context 54 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117564: quickSort (ggm.c:254)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 72 errors in context 55 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855AEB: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 78 errors in context 56 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117564: quickSort (ggm.c:254)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117564: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 114 errors in context 57 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117349: floor_log2i (ggm.c:48)
+==15516==    by 0x117349: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 58 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B60: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 59 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855A26: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 60 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x48559EC: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 61 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11722A: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 62 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11720D: floor_log2i (ggm.c:52)
+==15516==    by 0x11720D: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 63 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171F6: floor_log2i (ggm.c:44)
+==15516==    by 0x1171F6: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 64 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171E3: floor_log2i (ggm.c:40)
+==15516==    by 0x1171E3: full_ggm_tree_get_node_seed (ggm.c:168)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 65 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171CA: full_ggm_tree_get_node_seed (ggm.c:166)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 66 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171B8: floor_log2i (ggm.c:52)
+==15516==    by 0x1171B8: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 67 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171AC: floor_log2i (ggm.c:48)
+==15516==    by 0x1171AC: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 68 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1171A1: floor_log2i (ggm.c:44)
+==15516==    by 0x1171A1: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 69 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11718A: floor_log2i (ggm.c:40)
+==15516==    by 0x11718A: full_ggm_tree_get_node_seed (ggm.c:164)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 70 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117170: floor_log2i (ggm.c:52)
+==15516==    by 0x117170: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 71 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117163: floor_log2i (ggm.c:48)
+==15516==    by 0x117163: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 72 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117157: floor_log2i (ggm.c:44)
+==15516==    by 0x117157: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 138 errors in context 73 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11713F: floor_log2i (ggm.c:40)
+==15516==    by 0x11713F: full_ggm_tree_get_node_seed (ggm.c:163)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 159 errors in context 74 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117539: quickSort (ggm.c:254)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 160 errors in context 75 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11726C: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 160 errors in context 76 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E765: memcpy (string_fortified.h:29)
+==15516==    by 0x11E765: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:27)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 160 errors in context 77 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E6E7: memcpy (string_fortified.h:29)
+==15516==    by 0x11E6E7: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:25)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117AAD: full_ggm_tree_get_leaf_seed_commit (ggm.c:216)
+==15516==    by 0x117AAD: full_ggm_tree_open_sibling_path (ggm.c:381)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 161 errors in context 78 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117AEA: full_ggm_tree_open_sibling_path (ggm.c:392)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 286 errors in context 79 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117539: quickSort (ggm.c:254)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117539: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 598 errors in context 80 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179E0: estimate_topen (ggm.c:354)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 599 errors in context 81 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x10FE83: bitvec_is_zero_nonct (commons.c:69)
+==15516==    by 0x10DCF9: sdith_sign (sdith_signature.c:469)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 652 errors in context 82 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11726C: full_ggm_tree_get_node_seed (ggm.c:175)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 652 errors in context 83 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E765: memcpy (string_fortified.h:29)
+==15516==    by 0x11E765: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:27)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 652 errors in context 84 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x11E6E7: memcpy (string_fortified.h:29)
+==15516==    by 0x11E6E7: ggm_seed_rng_lr_cat3_rijndael256_avx2 (sdith_prng_avx2.c:25)
+==15516==    by 0x117268: full_ggm_tree_get_node_seed (ggm.c:179)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 719 errors in context 85 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x11751A: quickSort (ggm.c:254)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 981 errors in context 86 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x11751A: quickSort (ggm.c:254)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x11751A: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1777 errors in context 87 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174F7: quickSort (ggm.c:254)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 1794 errors in context 88 of 98:
+==15516== Use of uninitialised value of size 8
+==15516==    at 0x4855B63: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 2466 errors in context 89 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x10DCDF: sdith_sign (sdith_signature.c:468)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 2607 errors in context 90 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174F7: quickSort (ggm.c:254)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x1174F7: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 3312 errors in context 91 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x4855B6D: memmove (vg_replace_strmem.c:1414)
+==15516==    by 0x117B7C: full_ggm_tree_open_sibling_path (ggm.c:397)
+==15516==    by 0x10DD89: sdith_sign (sdith_signature.c:480)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 4585 errors in context 92 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174CB: quickSort (ggm.c:254)
+==15516==    by 0x1174CB: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 5700 errors in context 93 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174CB: quickSort (ggm.c:254)
+==15516==    by 0x1174CB: quickSort (ggm.c:256)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 8346 errors in context 94 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 9734 errors in context 95 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x1174A2: quickSort (ggm.c:254)
+==15516==    by 0x117924: quickSort (ggm.c:256)
+==15516==    by 0x117924: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 11900 errors in context 96 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x117450: partition (ggm.c:241)
+==15516==    by 0x117913: quickSort (ggm.c:254)
+==15516==    by 0x117913: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 13065 errors in context 97 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x11742B: partition (ggm.c:240)
+==15516==    by 0x117913: quickSort (ggm.c:254)
+==15516==    by 0x117913: hidden_leaves_indexes2 (ggm.c:302)
+==15516==    by 0x10DD18: sdith_sign (sdith_signature.c:470)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== 
+==15516== 116163 errors in context 98 of 98:
+==15516== Conditional jump or move depends on uninitialised value(s)
+==15516==    at 0x1179C2: estimate_topen (ggm.c:345)
+==15516==    by 0x10DD39: sdith_sign (sdith_signature.c:471)
+==15516==    by 0x10C06D: crypto_sign (sign.c:35)
+==15516==    by 0x10A375: main (taint_crypto_sign.c:33)
+==15516==  Uninitialised value was created by a client request
+==15516==    at 0x10A354: main (taint_crypto_sign.c:33)
+==15516== 
+==15516== ERROR SUMMARY: 190594 errors from 98 contexts (suppressed: 0 from 0)

@@ -1,0 +1,2111 @@
+==33670== Memcheck, a memory error detector
+==33670== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==33670== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==33670== Command: ./candidates/code/less/timecop/less_sign/taint_crypto_sign_548_137
+==33670== Parent PID: 32275
+==33670== 
+--33670-- 
+--33670-- Valgrind options:
+--33670--    -s
+--33670--    --track-origins=yes
+--33670--    --leak-check=full
+--33670--    --show-leak-kinds=all
+--33670--    --verbose
+--33670--    --log-file=candidates/code/less/timecop/less_sign/crypto_sign_548_137_output.txt
+--33670-- Contents of /proc/version:
+--33670--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--33670-- 
+--33670-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--33670-- Page sizes: currently 4096, max supported 4096
+--33670-- Valgrind library directory: /usr/libexec/valgrind
+--33670-- Reading syms from /home/bench/candidates/code/less/timecop/less_sign/taint_crypto_sign_548_137
+--33670-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--33670--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--33670--   .. build-id is valid
+--33670-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--33670--    object doesn't have a dynamic symbol table
+--33670-- Scheduler: using generic scheduler lock implementation.
+--33670-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==33670== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-33670-by-???-on-311cd7813541
+==33670== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-33670-by-???-on-311cd7813541
+==33670== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-33670-by-???-on-311cd7813541
+==33670== 
+==33670== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==33670== don't want to do, unless you know exactly what you're doing,
+==33670== or are doing some strange experiment):
+==33670==   /usr/libexec/valgrind/../../bin/vgdb --pid=33670 ...command...
+==33670== 
+==33670== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==33670==   /path/to/gdb ./candidates/code/less/timecop/less_sign/taint_crypto_sign_548_137
+==33670== and then give GDB the following command
+==33670==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=33670
+==33670== --pid is optional if only one valgrind process is running
+==33670== 
+--33670-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--33670-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--33670-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--33670-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--33670-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--33670--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--33670--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--33670-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--33670-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--33670--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--33670--   .. build-id is valid
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x04908c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--33670--     new: 0x04908c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x04908c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--33670--     new: 0x04908c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x04908c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--33670--     new: 0x04908c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==33670== WARNING: new redirection conflicts with existing -- ignoring it
+--33670--     old: 0x04908c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--33670--     new: 0x04908c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--33670-- REDIR: 0x490b720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b9e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b2e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4929cd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c6d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4928540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490cc10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4928370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c5a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==33670== Preferring higher priority redirection:
+--33670--     old: 0x04a037c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--33670--     new: 0x04a037c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--33670-- REDIR: 0x49283f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c9e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x49289b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490ca70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4928470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b1d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490cb60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4914570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490e010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490cb10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b6a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490b8d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4928a40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c3f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490bb00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490c7d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490cac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x490df80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--33670-- REDIR: 0x4a00610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--33670-- REDIR: 0x4909520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--33670-- Warning: cross-CU LIMITATION: some inlined fn names
+--33670-- might be shown as UnknownInlinedFun
+--33670-- REDIR: 0x4a03f80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--33670-- REDIR: 0x4a037c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x115357: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x115357: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x115392: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x115392: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1153CC: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x1153CC: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x115407: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x115407: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11543F: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x11543F: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x115478: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x115478: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1154B1: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x1154B1: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1154EB: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x1154EB: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11551D: UnknownInlinedFun (fq_arith.h:192)
+==33670==    by 0x11551D: generator_sample (codes.c:684)
+==33670==    by 0x124358: LESS_sign (LESS.c:142)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+--33670-- memcheck GC: 1000 nodes, 998 survivors (99.8%)
+--33670-- memcheck GC: 1414 new table size (stepup)
+--33670-- memcheck GC: 1414 nodes, 1414 survivors (100.0%)
+--33670-- memcheck GC: 1999 new table size (stepup)
+--33670-- memcheck GC: 1999 nodes, 1998 survivors (99.9%)
+--33670-- memcheck GC: 2827 new table size (stepup)
+--33670-- memcheck GC: 2827 nodes, 2826 survivors (100.0%)
+--33670-- memcheck GC: 3997 new table size (stepup)
+--33670-- memcheck GC: 3997 nodes, 3996 survivors (100.0%)
+--33670-- memcheck GC: 5652 new table size (stepup)
+--33670-- memcheck GC: 5652 nodes, 5651 survivors (100.0%)
+--33670-- memcheck GC: 7993 new table size (stepup)
+--33670-- memcheck GC: 7993 nodes, 7993 survivors (100.0%)
+--33670-- memcheck GC: 11303 new table size (stepup)
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11724A: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11724A: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11727F: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11727F: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1172B5: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x1172B5: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1172EB: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x1172EB: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x117321: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x117321: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x117357: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x117357: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11738B: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11738B: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1173BC: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x1173BC: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1173EE: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x1173EE: monomial_sample_salt (monomial.c:113)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x116D00: yt_shuffle_state (monomial.c:87)
+==33670==    by 0x1175F3: monomial_sample_salt (monomial.c:119)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x116DF5: yt_shuffle_state (monomial.c:90)
+==33670==    by 0x1175F3: monomial_sample_salt (monomial.c:119)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x116DB2: yt_shuffle_state (monomial.c:87)
+==33670==    by 0x1175F3: monomial_sample_salt (monomial.c:119)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x116DD2: yt_shuffle_state (monomial.c:87)
+==33670==    by 0x1175F3: monomial_sample_salt (monomial.c:119)
+==33670==    by 0x124938: LESS_sign (LESS.c:155)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+--33670-- memcheck GC: 11303 nodes, 11303 survivors (100.0%)
+--33670-- memcheck GC: 15984 new table size (stepup)
+--33670-- memcheck GC: 15984 nodes, 15984 survivors (100.0%)
+--33670-- memcheck GC: 22604 new table size (stepup)
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x124B5C: UnknownInlinedFun (avxintrin.h:935)
+==33670==    by 0x124B5C: UnknownInlinedFun (codes.c:186)
+==33670==    by 0x124B5C: UnknownInlinedFun (codes.c:322)
+==33670==    by 0x124B5C: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124FBB: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124FBB: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+--33670-- memcheck GC: 22604 nodes, 22568 survivors (99.8%)
+--33670-- memcheck GC: 31966 new table size (stepup)
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1258D2: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x1258D2: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1258F2: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x1258F2: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125912: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125912: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125931: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125931: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125951: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125951: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125971: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125971: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1259A6: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x1259A6: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1259C9: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x1259C9: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1259E9: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x1259E9: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125A09: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125A09: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125A29: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125A29: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125A42: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125A42: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125A5B: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125A5B: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125A7B: UnknownInlinedFun (codes.c:397)
+==33670==    by 0x125A7B: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x125AFC: UnknownInlinedFun (codes.c:410)
+==33670==    by 0x125AFC: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x125B01: UnknownInlinedFun (codes.c:410)
+==33670==    by 0x125B01: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x125B0D: UnknownInlinedFun (codes.c:411)
+==33670==    by 0x125B0D: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124FCE: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124FCE: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124FE8: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124FE8: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124F5A: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124F5A: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124F6F: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124F6F: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124F82: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124F82: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124F95: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124F95: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124FA8: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124FA8: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119A59: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119A59: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119A89: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119A89: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119ABB: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119ABB: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119AEE: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119AEE: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119B21: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119B21: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119B54: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119B54: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119B86: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119B86: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119BB3: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119BB3: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119BE2: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119BE2: blind (canonical.c:266)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119DFA: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119DFA: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E0F: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E0F: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E29: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E29: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E45: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E45: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E5F: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E5F: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E7E: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E7E: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x119E96: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x119E96: blind (canonical.c:267)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119F4B: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119F4B: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119F7F: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119F7F: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119FB4: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119FB4: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x119FE9: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x119FE9: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11A01F: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11A01F: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11A055: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11A055: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11A089: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11A089: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11A0BD: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11A0BD: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11A0EC: UnknownInlinedFun (fq_arith.h:190)
+==33670==    by 0x11A0EC: blind (canonical.c:269)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A337: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A337: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A350: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A350: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A36A: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A36A: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A383: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A383: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A3AA: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A3AA: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A3BB: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A3BB: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11A3CF: UnknownInlinedFun (monomial.c:57)
+==33670==    by 0x11A3CF: blind (canonical.c:270)
+==33670==    by 0x12541E: LESS_sign (LESS.c:202)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11FE0F: compute_canonical_form_type5_popcnt (canonical.c:194)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11FE1C: compute_canonical_form_type5_popcnt (canonical.c:198)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11FE25: compute_canonical_form_type5_popcnt (canonical.c:205)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FF81: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FF81: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FF86: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FF86: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFB0: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFB0: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFB5: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFB5: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFC5: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFC5: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFD9: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFD9: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFDE: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFDE: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11FFF3: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x11FFF3: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120002: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x120002: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120007: UnknownInlinedFun (fq_arith.h:372)
+==33670==    by 0x120007: compute_canonical_form_type5_popcnt (canonical.c:223)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x120501: UnknownInlinedFun (canonical.c:93)
+==33670==    by 0x120501: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x12050B: UnknownInlinedFun (fq_arith.h:167)
+==33670==    by 0x12050B: UnknownInlinedFun (canonical.c:94)
+==33670==    by 0x12050B: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A2B: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A2B: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A2B: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A36: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A36: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A36: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A47: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A47: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A47: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A4F: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A4F: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A4F: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A58: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A58: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A58: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== 
+==33670== More than 100 errors detected.  Subsequent errors
+==33670== will still be recorded, but in less detail than before.
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A61: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A61: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A61: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A69: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A69: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A69: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A72: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A72: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A72: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A7B: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A7B: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A7B: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120A83: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x120A83: UnknownInlinedFun (canonical.c:101)
+==33670==    by 0x120A83: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+--33670-- memcheck GC: 31966 nodes, 31965 survivors (100.0%)
+--33670-- memcheck GC: 45206 new table size (stepup)
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF0A: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF0A: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11E1BC: compute_canonical_form_type4 (canonical.c:63)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E1C6: UnknownInlinedFun (fq_arith.h:167)
+==33670==    by 0x11E1C6: compute_canonical_form_type4 (canonical.c:64)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF1C: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF1C: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF2D: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF2D: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF37: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF37: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF41: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF41: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF4B: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF4B: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF55: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF55: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF5F: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF5F: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF6D: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF6D: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DF76: UnknownInlinedFun (fq_arith.h:395)
+==33670==    by 0x11DF76: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DFDF: compute_canonical_form_type4 (canonical.c:60)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E6B6: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E6B6: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E6C6: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E6C6: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E6E5: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E6E5: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E6F4: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E6F4: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E704: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E704: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E714: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E714: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E724: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E724: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E734: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E734: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E744: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E744: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11E754: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x11E754: compute_canonical_form_type4 (canonical.c:66)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C715: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C715: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C721: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C721: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C744: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C744: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C74E: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C74E: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C758: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C758: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C762: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C762: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C76B: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C76B: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C76F: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C76F: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C773: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C773: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11C777: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x11C777: SortRows.constprop.0 (sort.c:215)
+==33670==    by 0x11E685: UnknownInlinedFun (canonical.c:44)
+==33670==    by 0x11E685: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D485: UnknownInlinedFun (sort.c:248)
+==33670==    by 0x11D485: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D52A: SortCols_internal_hoare_partition (sort.c:268)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D522: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D537: SortCols_internal_hoare_partition (sort.c:269)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D539: UnknownInlinedFun (utils.c:35)
+==33670==    by 0x11D539: SortCols_internal_hoare_partition (sort.c:270)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D570: SortCols_internal_hoare_partition (sort.c:273)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D584: SortCols_internal_hoare_partition (sort.c:274)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D587: UnknownInlinedFun (utils.c:35)
+==33670==    by 0x11D587: SortCols_internal_hoare_partition (sort.c:275)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D9CD: UnknownInlinedFun (sort.c:303)
+==33670==    by 0x11D9CD: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11DD67: UnknownInlinedFun (sort.c:307)
+==33670==    by 0x11DD67: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D461: SortCols_internal_hoare_partition (sort.c:265)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D479: UnknownInlinedFun (sort.c:248)
+==33670==    by 0x11D479: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D564: SortCols_internal_hoare_partition (sort.c:265)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D53C: SortCols_internal_hoare_partition (sort.c:269)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D540: UnknownInlinedFun (utils.c:35)
+==33670==    by 0x11D540: SortCols_internal_hoare_partition (sort.c:270)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D495: UnknownInlinedFun (sort.c:248)
+==33670==    by 0x11D495: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D9DB: UnknownInlinedFun (sort.c:307)
+==33670==    by 0x11D9DB: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D3DB: SortCols_internal_hoare_partition (sort.c:261)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D58A: SortCols_internal_hoare_partition (sort.c:274)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x11D58D: UnknownInlinedFun (utils.c:35)
+==33670==    by 0x11D58D: SortCols_internal_hoare_partition (sort.c:275)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D4A7: UnknownInlinedFun (sort.c:248)
+==33670==    by 0x11D4A7: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1210CA: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x1210CA: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1211A1: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1211E4: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x1211E4: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x1211E8: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x1211E8: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x121203: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x121203: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x12121B: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x12121B: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x121226: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x121226: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x12122A: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x12122A: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x12122E: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x12122E: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x121232: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x121232: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x121236: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x121236: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x12123A: UnknownInlinedFun (sort.c:144)
+==33670==    by 0x12123A: compute_canonical_form_type5_popcnt (canonical.c:235)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1210DB: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x1210DB: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x1210F1: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x1210F1: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121104: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121104: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121117: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121117: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x12112A: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x12112A: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121139: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121139: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121148: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121148: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121157: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121157: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x121166: UnknownInlinedFun (canonical.c:124)
+==33670==    by 0x121166: compute_canonical_form_type5_popcnt (canonical.c:234)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120B8B: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120B8B: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120B8B: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120B90: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120B90: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120B90: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BAD: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BAD: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BAD: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BBC: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BBC: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BBC: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BCC: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BCC: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BCC: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BDC: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BDC: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BDC: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BEC: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BEC: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BEC: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120BFC: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120BFC: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120BFC: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120C0C: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120C0C: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120C0C: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Use of uninitialised value of size 8
+==33670==    at 0x120C1C: UnknownInlinedFun (fq_arith.h:227)
+==33670==    by 0x120C1C: UnknownInlinedFun (canonical.c:96)
+==33670==    by 0x120C1C: compute_canonical_form_type5_popcnt (canonical.c:228)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x11D4B5: UnknownInlinedFun (sort.c:248)
+==33670==    by 0x11D4B5: SortCols_internal_hoare_partition (sort.c:266)
+==33670==    by 0x11D9B6: UnknownInlinedFun (sort.c:302)
+==33670==    by 0x11D9B6: SortCols.constprop.0 (sort.c:335)
+==33670==    by 0x11E695: UnknownInlinedFun (canonical.c:47)
+==33670==    by 0x11E695: compute_canonical_form_type4 (canonical.c:75)
+==33670==    by 0x12108E: compute_canonical_form_type5_popcnt (canonical.c:233)
+==33670==    by 0x12542B: UnknownInlinedFun (canonical.c:297)
+==33670==    by 0x12542B: LESS_sign (LESS.c:203)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a stack allocation
+==33670==    at 0x123B3D: LESS_sign (LESS.c:95)
+==33670== 
+==33670== Conditional jump or move depends on uninitialised value(s)
+==33670==    at 0x124FFB: UnknownInlinedFun (codes.c:339)
+==33670==    by 0x124FFB: LESS_sign (LESS.c:166)
+==33670==    by 0x126997: crypto_sign (sign.c:57)
+==33670==    by 0x10B1EF: main (taint_crypto_sign.c:33)
+==33670==  Uninitialised value was created by a client request
+==33670==    at 0x10B1CE: main (taint_crypto_sign.c:32)
+==33670== 
+==33670== 
+==33670== More than 10000000 total errors detected.  I'm not reporting any more.
+==33670== Final error counts will be inaccurate.  Go fix your program!
+==33670== Rerun with --error-limit=no to disable this cutoff.  Note
+==33670== that errors may occur in your program without prior warning from
+==33670== Valgrind, because errors are no longer being displayed.
+==33670== 

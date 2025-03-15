@@ -1,0 +1,497 @@
+==40562== Memcheck, a memory error detector
+==40562== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==40562== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==40562== Command: ./candidates/lattice/hawk/timecop/hawk256/hawk_sign/taint_crypto_sign
+==40562== Parent PID: 40561
+==40562== 
+--40562-- 
+--40562-- Valgrind options:
+--40562--    -s
+--40562--    --track-origins=yes
+--40562--    --leak-check=full
+--40562--    --show-leak-kinds=all
+--40562--    --leak-resolution=low
+--40562--    --verbose
+--40562--    --log-file=candidates/lattice/hawk/timecop/hawk256/hawk_sign/crypto_sign_output.txt
+--40562-- Contents of /proc/version:
+--40562--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--40562-- 
+--40562-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--40562-- Page sizes: currently 4096, max supported 4096
+--40562-- Valgrind library directory: /usr/libexec/valgrind
+--40562-- Reading syms from /home/new_tests/candidates/lattice/hawk/timecop/hawk256/hawk_sign/taint_crypto_sign
+--40562-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--40562--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--40562--   .. build-id is valid
+--40562-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--40562--    object doesn't have a dynamic symbol table
+--40562-- Scheduler: using generic scheduler lock implementation.
+--40562-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==40562== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-40562-by-???-on-4b5b578b17e8
+==40562== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-40562-by-???-on-4b5b578b17e8
+==40562== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-40562-by-???-on-4b5b578b17e8
+==40562== 
+==40562== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==40562== don't want to do, unless you know exactly what you're doing,
+==40562== or are doing some strange experiment):
+==40562==   /usr/libexec/valgrind/../../bin/vgdb --pid=40562 ...command...
+==40562== 
+==40562== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==40562==   /path/to/gdb ./candidates/lattice/hawk/timecop/hawk256/hawk_sign/taint_crypto_sign
+==40562== and then give GDB the following command
+==40562==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=40562
+==40562== --pid is optional if only one valgrind process is running
+==40562== 
+--40562-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--40562-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--40562-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--40562-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--40562-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--40562--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--40562--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--40562-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--40562-- Reading syms from /home/new_tests/candidates/lattice/hawk/NIST/Optimized_Implementation/avx2/hawk256/build/libcttest.so
+--40562-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--40562--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--40562--   .. build-id is valid
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x04931c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--40562--     new: 0x04931c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x04931c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--40562--     new: 0x04931c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x04931c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--40562--     new: 0x04931c60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==40562== WARNING: new redirection conflicts with existing -- ignoring it
+--40562--     old: 0x04931c60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--40562--     new: 0x04931c60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--40562-- REDIR: 0x4934720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49349e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49342e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4952cd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49356d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4951540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4951370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49355a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==40562== Preferring higher priority redirection:
+--40562--     old: 0x04a2c7c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--40562--     new: 0x04a2c7c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--40562-- REDIR: 0x49513f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49359e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49519b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935a70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4951470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49341d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935b60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x493d570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4937010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935b10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49346a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49348d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4951a40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49353f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4934b00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x49357d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4935ac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4936f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4a29610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--40562-- REDIR: 0x4932520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--40562-- REDIR: 0x4a2c7c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--40562-- REDIR: 0x4a2cf80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4862C7D: sign_finish_inner.part.0 (hawk_sign.c:1317)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562== 
+--40562-- REDIR: 0x49c0280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--40562-- REDIR: 0x4a2c790 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4856a90 (__memcpy_chk)
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x486365C: sign_finish_inner.part.0 (hawk_sign.c:1442)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4863841: encode_sig (hawk_sign.c:1006)
+==40562==    by 0x4863841: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4863845: encode_sig (hawk_sign.c:1006)
+==40562==    by 0x4863845: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4863850: encode_sig (hawk_sign.c:1008)
+==40562==    by 0x4863850: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x48637CE: encode_sig (hawk_sign.c:1011)
+==40562==    by 0x48637CE: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4864469: encode_sig (hawk_sign.c:1031)
+==40562==    by 0x4864469: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x486448A: encode_sig (hawk_sign.c:1032)
+==40562==    by 0x486448A: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4864477: encode_sig (hawk_sign.c:1035)
+==40562==    by 0x4864477: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4864485: encode_sig (hawk_sign.c:1031)
+==40562==    by 0x4864485: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48644A1: encode_sig (hawk_sign.c:1041)
+==40562==    by 0x48644A1: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48644A6: encode_sig (hawk_sign.c:1042)
+==40562==    by 0x48644A6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x48644AC: encode_sig (hawk_sign.c:1045)
+==40562==    by 0x48644AC: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48558F1: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4855926: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x485596A: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48559A9: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48559C1: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+--40562-- REDIR: 0x49313e0 (libc.so.6:free) redirected to 0x484baba (free)
+==40562== 
+==40562== HEAP SUMMARY:
+==40562==     in use at exit: 0 bytes in 0 blocks
+==40562==   total heap usage: 2 allocs, 2 frees, 315 bytes allocated
+==40562== 
+==40562== All heap blocks were freed -- no leaks are possible
+==40562== 
+==40562== ERROR SUMMARY: 355 errors from 18 contexts (suppressed: 0 from 0)
+==40562== 
+==40562== 1 errors in context 1 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48559C1: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 2 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48559A9: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 3 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x485596A: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 4 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4855926: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 5 of 18:
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x48644AC: encode_sig (hawk_sign.c:1045)
+==40562==    by 0x48644AC: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 6 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48644A6: encode_sig (hawk_sign.c:1042)
+==40562==    by 0x48644A6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 7 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48644A1: encode_sig (hawk_sign.c:1041)
+==40562==    by 0x48644A1: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 8 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x486365C: sign_finish_inner.part.0 (hawk_sign.c:1442)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 1 errors in context 9 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4862C7D: sign_finish_inner.part.0 (hawk_sign.c:1317)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 3 errors in context 10 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x48558F1: memset (vg_replace_strmem.c:1390)
+==40562==    by 0x48644C6: memset (string_fortified.h:59)
+==40562==    by 0x48644C6: encode_sig (hawk_sign.c:1050)
+==40562==    by 0x48644C6: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 8 errors in context 11 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4864485: encode_sig (hawk_sign.c:1031)
+==40562==    by 0x4864485: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 8 errors in context 12 of 18:
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4864477: encode_sig (hawk_sign.c:1035)
+==40562==    by 0x4864477: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 8 errors in context 13 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x486448A: encode_sig (hawk_sign.c:1032)
+==40562==    by 0x486448A: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 61 errors in context 14 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4864469: encode_sig (hawk_sign.c:1031)
+==40562==    by 0x4864469: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 64 errors in context 15 of 18:
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x48637CE: encode_sig (hawk_sign.c:1011)
+==40562==    by 0x48637CE: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 64 errors in context 16 of 18:
+==40562== Conditional jump or move depends on uninitialised value(s)
+==40562==    at 0x4863850: encode_sig (hawk_sign.c:1008)
+==40562==    by 0x4863850: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 65 errors in context 17 of 18:
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4863845: encode_sig (hawk_sign.c:1006)
+==40562==    by 0x4863845: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== 
+==40562== 65 errors in context 18 of 18:
+==40562== Use of uninitialised value of size 8
+==40562==    at 0x4863841: encode_sig (hawk_sign.c:1006)
+==40562==    by 0x4863841: sign_finish_inner.part.0 (hawk_sign.c:1459)
+==40562==    by 0x4864786: hawk_sign_finish (hawk_sign.c:1484)
+==40562==    by 0x4875DA5: crypto_sign (api.c:55)
+==40562==    by 0x10929E: main (taint_crypto_sign.c:33)
+==40562==  Uninitialised value was created by a client request
+==40562==    at 0x10927D: main (taint_crypto_sign.c:33)
+==40562== 
+==40562== ERROR SUMMARY: 355 errors from 18 contexts (suppressed: 0 from 0)

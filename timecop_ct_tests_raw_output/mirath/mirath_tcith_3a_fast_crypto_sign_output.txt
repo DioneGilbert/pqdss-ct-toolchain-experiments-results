@@ -1,0 +1,458 @@
+==6810== Memcheck, a memory error detector
+==6810== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==6810== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==6810== Command: ./candidates/mpc-in-the-head/mirath/timecop/mirath_tcith_3a_fast/mirath_sign/taint_crypto_sign
+==6810== Parent PID: 5846
+==6810== 
+--6810-- 
+--6810-- Valgrind options:
+--6810--    -s
+--6810--    --track-origins=yes
+--6810--    --leak-check=full
+--6810--    --show-leak-kinds=all
+--6810--    --verbose
+--6810--    --log-file=candidates/mpc-in-the-head/mirath/timecop/mirath_tcith_3a_fast/mirath_sign/crypto_sign_output.txt
+--6810-- Contents of /proc/version:
+--6810--   Linux version 6.5.11-linuxkit (root@buildkitsandbox) (gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, GNU ld (GNU Binutils) 2.40) #1 SMP PREEMPT_DYNAMIC Wed Dec  6 17:14:50 UTC 2023
+--6810-- 
+--6810-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--6810-- Page sizes: currently 4096, max supported 4096
+--6810-- Valgrind library directory: /usr/libexec/valgrind
+--6810-- Reading syms from /home/new_tests/candidates/mpc-in-the-head/mirath/timecop/mirath_tcith_3a_fast/mirath_sign/taint_crypto_sign
+--6810-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--6810--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--6810--   .. build-id is valid
+--6810-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--6810--    object doesn't have a dynamic symbol table
+--6810-- Scheduler: using generic scheduler lock implementation.
+--6810-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==6810== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6810-by-???-on-4b5b578b17e8
+==6810== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6810-by-???-on-4b5b578b17e8
+==6810== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6810-by-???-on-4b5b578b17e8
+==6810== 
+==6810== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6810== don't want to do, unless you know exactly what you're doing,
+==6810== or are doing some strange experiment):
+==6810==   /usr/libexec/valgrind/../../bin/vgdb --pid=6810 ...command...
+==6810== 
+==6810== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6810==   /path/to/gdb ./candidates/mpc-in-the-head/mirath/timecop/mirath_tcith_3a_fast/mirath_sign/taint_crypto_sign
+==6810== and then give GDB the following command
+==6810==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=6810
+==6810== --pid is optional if only one valgrind process is running
+==6810== 
+--6810-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c2172 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--6810-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c218c (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--6810-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c21a7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--6810-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--6810-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c218c vgPlain_amd64_linux_REDIR_FOR_strcmp
+--6810--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x04853020 strcmp
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c2172 vgPlain_amd64_linux_REDIR_FOR_strlen
+--6810--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04851f70 strlen
+--6810-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856990 (mempcpy)
+--6810-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+--6810-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--6810--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--6810--   .. build-id is valid
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x04d4bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--6810--     new: 0x04d4bc60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x04d4bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--6810--     new: 0x04d4bc60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x04d4bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--6810--     new: 0x04d4bc60 (memalign            ) R-> (1017.0) 0x0485108b aligned_alloc
+==6810== WARNING: new redirection conflicts with existing -- ignoring it
+--6810--     old: 0x04d4bc60 (memalign            ) R-> (1011.0) 0x04850928 memalign
+--6810--     new: 0x04d4bc60 (memalign            ) R-> (1017.0) 0x04850f2e aligned_alloc
+--6810-- REDIR: 0x4d4e720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e9e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e2e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6ccd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f6d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6b540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4fc10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6b370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f5a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==6810== Preferring higher priority redirection:
+--6810--     old: 0x04e467c0 (__memcpy_avx_unalign) R-> (2018.0) 0x048541e0 __memcpy_avx_unaligned_erms
+--6810--     new: 0x04e467c0 (__memcpy_avx_unalign) R-> (2018.1) 0x048559d0 memmove
+--6810-- REDIR: 0x4d6b3f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f9e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6b9b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4fa70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6b470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e1d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4fb60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d57570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d51010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4fb10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e6a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4e8d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d6ba40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f3f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4eb00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f7d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4fac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d50f80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4dda280 (libc.so.6:__memcpy_chk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4d4f310 (libc.so.6:strstr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--6810-- REDIR: 0x4e43610 (libc.so.6:__strrchr_avx2) redirected to 0x48517e0 (rindex)
+--6810-- REDIR: 0x4e437e0 (libc.so.6:__strlen_avx2) redirected to 0x4851e50 (strlen)
+--6810-- REDIR: 0x4e3ed80 (libc.so.6:__strncmp_avx2) redirected to 0x4852670 (strncmp)
+--6810-- REDIR: 0x4d4c520 (libc.so.6:calloc) redirected to 0x485016a (calloc)
+--6810-- REDIR: 0x4d4b0a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+--6810-- REDIR: 0x4e46f80 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48558c0 (memset)
+--6810-- REDIR: 0x4d4b740 (libc.so.6:realloc) redirected to 0x4850384 (realloc)
+--6810-- REDIR: 0x4d4efc0 (libc.so.6:__GI_strstr) redirected to 0x4856ba0 (__strstr_sse2)
+--6810-- REDIR: 0x4e43180 (libc.so.6:__strchr_avx2) redirected to 0x48519c0 (index)
+--6810-- REDIR: 0x4d4b3e0 (libc.so.6:free) redirected to 0x484baba (free)
+--6810-- REDIR: 0x4e467c0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48559d0 (memmove)
+--6810-- REDIR: 0x4e44cb0 (libc.so.6:__strcpy_avx2) redirected to 0x4851fa0 (strcpy)
+--6810-- REDIR: 0x4e3f2c0 (libc.so.6:__memchr_avx2) redirected to 0x48530a0 (memchr)
+--6810-- REDIR: 0x4e3e940 (libc.so.6:__strcmp_avx2) redirected to 0x4852f20 (strcmp)
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122CF9: mirath_matrix_compute_y (mirath_matrix_ff.c:54)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122CF9: mirath_matrix_compute_y (mirath_matrix_ff.c:54)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122E3F: mirath_matrix_compute_y (mirath_matrix_ff.c:79)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122E3F: mirath_matrix_compute_y (mirath_matrix_ff.c:79)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+--6810-- REDIR: 0x4e46790 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4856a90 (__memcpy_chk)
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x127917: emulateMPC_mu (mirath_tcith.c:321)
+==6810==    by 0x1242C4: mirath_sign (mirath_sign.c:63)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x127917: emulateMPC_mu (mirath_tcith.c:321)
+==6810==    by 0x1242C4: mirath_sign (mirath_sign.c:63)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12028E: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:171)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12021A: mirath_ggm_tree_is_in_list (mirath_ggm_tree.c:105)
+==6810==    by 0x12021A: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:172)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x120220: mirath_ggm_tree_is_in_list (mirath_ggm_tree.c:109)
+==6810==    by 0x120220: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:172)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x120271: mirath_ggm_tree_insert_sorted (mirath_ggm_tree.c:78)
+==6810==    by 0x120271: mirath_ggm_tree_insert_sorted (mirath_ggm_tree.c:69)
+==6810==    by 0x120271: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:178)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x1201DB: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:171)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x1202C9: memcpy (string_fortified.h:29)
+==6810==    by 0x1202C9: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:188)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x12AEF8: memcpy (string_fortified.h:29)
+==6810==    by 0x12AEF8: mirath_tcith_multivc_open (mirath_tcith.c:514)
+==6810==    by 0x12AEF8: mirath_tcith_multivc_open (mirath_tcith.c:494)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12B045: mirath_tcith_open_random_share (mirath_tcith.c:538)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a stack allocation
+==6810==    at 0x1266DF: emulateMPC_mu (mirath_tcith.c:282)
+==6810== 
+==6810== 
+==6810== HEAP SUMMARY:
+==6810==     in use at exit: 0 bytes in 0 blocks
+==6810==   total heap usage: 6,594 allocs, 6,594 frees, 916,579 bytes allocated
+==6810== 
+==6810== All heap blocks were freed -- no leaks are possible
+==6810== 
+==6810== ERROR SUMMARY: 108322 errors from 14 contexts (suppressed: 0 from 0)
+==6810== 
+==6810== 1 errors in context 1 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12B045: mirath_tcith_open_random_share (mirath_tcith.c:538)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a stack allocation
+==6810==    at 0x1266DF: emulateMPC_mu (mirath_tcith.c:282)
+==6810== 
+==6810== 
+==6810== 26 errors in context 2 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x12AEF8: memcpy (string_fortified.h:29)
+==6810==    by 0x12AEF8: mirath_tcith_multivc_open (mirath_tcith.c:514)
+==6810==    by 0x12AEF8: mirath_tcith_multivc_open (mirath_tcith.c:494)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 39 errors in context 3 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x1201DB: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:171)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 560 errors in context 4 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x1202C9: memcpy (string_fortified.h:29)
+==6810==    by 0x1202C9: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:188)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 630 errors in context 5 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122CF9: mirath_matrix_compute_y (mirath_matrix_ff.c:54)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 635 errors in context 6 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12028E: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:171)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 700 errors in context 7 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122CF9: mirath_matrix_compute_y (mirath_matrix_ff.c:54)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 4244 errors in context 8 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x12021A: mirath_ggm_tree_is_in_list (mirath_ggm_tree.c:105)
+==6810==    by 0x12021A: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:172)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 4308 errors in context 9 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x120220: mirath_ggm_tree_is_in_list (mirath_ggm_tree.c:109)
+==6810==    by 0x120220: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:172)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 16185 errors in context 10 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122E3F: mirath_matrix_compute_y (mirath_matrix_ff.c:79)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 16185 errors in context 11 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x122E3F: mirath_matrix_compute_y (mirath_matrix_ff.c:79)
+==6810==    by 0x122F98: mirath_matrix_decompress_secret_key (mirath_matrix_ff.c:109)
+==6810==    by 0x1241A3: mirath_sign (mirath_sign.c:46)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 16380 errors in context 12 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121E22: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121E22: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x127917: emulateMPC_mu (mirath_tcith.c:321)
+==6810==    by 0x1242C4: mirath_sign (mirath_sign.c:63)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 18200 errors in context 13 of 14:
+==6810== Use of uninitialised value of size 8
+==6810==    at 0x121D29: mirath_matrix_ff_product_arith (matrix_ff_arith.h:120)
+==6810==    by 0x121D29: mirath_matrix_ff_product (mirath_matrix_ff.c:154)
+==6810==    by 0x127917: emulateMPC_mu (mirath_tcith.c:321)
+==6810==    by 0x1242C4: mirath_sign (mirath_sign.c:63)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== 
+==6810== 30229 errors in context 14 of 14:
+==6810== Conditional jump or move depends on uninitialised value(s)
+==6810==    at 0x120271: mirath_ggm_tree_insert_sorted (mirath_ggm_tree.c:78)
+==6810==    by 0x120271: mirath_ggm_tree_insert_sorted (mirath_ggm_tree.c:69)
+==6810==    by 0x120271: mirath_ggm_tree_get_sibling_path (mirath_ggm_tree.c:178)
+==6810==    by 0x12AEC8: mirath_tcith_multivc_open (mirath_tcith.c:506)
+==6810==    by 0x12B038: mirath_tcith_open_random_share (mirath_tcith.c:536)
+==6810==    by 0x124327: mirath_sign (mirath_sign.c:71)
+==6810==    by 0x1096AC: crypto_sign (sign.c:43)
+==6810==    by 0x1093FE: main (taint_crypto_sign.c:33)
+==6810==  Uninitialised value was created by a client request
+==6810==    at 0x1093DD: main (taint_crypto_sign.c:33)
+==6810== 
+==6810== ERROR SUMMARY: 108322 errors from 14 contexts (suppressed: 0 from 0)
